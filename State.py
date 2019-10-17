@@ -2,7 +2,6 @@ class ApprovalState(object):
     name = "state"
     allowed = []
     def switch(self, state):
-        print(state.name)
         if (state.name == "PENDING" and "HOLD" in self.allowed) or state.name in self.allowed:
             print("switching state from: ", self, " to ", state.name)
             self.__class__ = state
@@ -30,11 +29,14 @@ class MainClass(object):
     def change(self, state):
         self.state.switch(state)
 
-if __name__ == "__main__":
+if __name__ == "__main__": #add more states here 
     isChangeState = MainClass()
     isChangeState.change(Approve)
+    isChangeState.change(Pending)
     isChangeState.change(Reject)
     isChangeState.change(Approve) #should fail here
     isChangeState.change(Pending)
     isChangeState.change(Reject)
     isChangeState.change(Pending)
+
+
