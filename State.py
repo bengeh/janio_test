@@ -34,7 +34,7 @@ if __name__ == "__main__": #add more states here
     isChangeState.change(Approve)
     isChangeState.change(Pending)
     isChangeState.change(Reject)
-    isChangeState.change(Approve) #should fail here
+    isChangeState.change(Approve) #shouldnt allow change of state as it is not possible
     isChangeState.change(Pending)
     isChangeState.change(Reject)
     isChangeState.change(Pending)
